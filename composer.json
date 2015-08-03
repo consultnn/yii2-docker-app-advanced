@@ -9,7 +9,7 @@
             "email": "sergey.sipatov@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "config": {
         "process-timeout": 1800
     },
