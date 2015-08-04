@@ -13,7 +13,7 @@ INSTALLATION VIA COMPOSER
 composer create-project --prefer-dist --no-install consultnn/yii2-docker-app-advanced app
 ```
 
-MANUALLY INSTALLATION
+MANUAL INSTALLATION
 ---------------------
 Clone this repository
 ```
@@ -33,13 +33,13 @@ docker-compose run --rm php composer create-project --prefer-dist yiisoft/yii2-a
 ```
 Change project directory owner (default root, because process inside container run as root)
 ```
-chown -R $USER:$USER project
+sudo chown -R $USER:$USER project
 ```
 
 DIRECTORY STRUCTURE
 -------------------
 ```
-docker                          contains docker configuration, build files and logs
+docker                          contains docker configurations, build files and logs
     nginx                       nginx docker configuration
     php                         php docker configuration
 project                         Yii 2 Advanced Project Template
@@ -47,9 +47,9 @@ docker-compose.yml              docker-compose configuration
 ```
 
 
-USING
+USAGE
 ------
-For executing commands inside docker container run
+To execute commands inside docker container run
 ~~~
 docker-compose run --rm {service} {command}
 or, if application already running
@@ -65,7 +65,7 @@ Start docker containers
 ~~~
 docker-compose up -d
 ~~~
-NOTE: for composer use `--prefer-dist` options, git not installed in php container.
-NOTE: inside php container default directory - project
+NOTE: git isn't installed in php container, so use `--prefer-dist` composer option
+NOTE: default directory inside php container - "/project"
 
 After start check http://127.0.0.1:8090
