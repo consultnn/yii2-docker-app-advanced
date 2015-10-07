@@ -4,7 +4,6 @@ nginx:
   - php
   volumes:
   - project:/www
-  - docker/nginx/log:/var/log/nginx:rw
   - docker/nginx/conf.d:/etc/nginx/conf.d
   ports:
   - "8090:80"
@@ -13,5 +12,4 @@ php:
   volumes:
   - project:/www:rw
   - docker/php/php-fpm.conf:/usr/local/etc/php-fpm.conf
-  - docker/php/log:/var/log/php-fpm:rw
   working_dir: /www/
