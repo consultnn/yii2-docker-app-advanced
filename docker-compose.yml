@@ -3,8 +3,8 @@ nginx:
   links:
   - php
   volumes:
-  - project:/www
-  - docker/nginx/conf.d:/etc/nginx/conf.d
+  - ./project:/www
+  - ./docker/nginx/conf.d:/etc/nginx/conf.d
   ports:
   - "8090:80"
 
