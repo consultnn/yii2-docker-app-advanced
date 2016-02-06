@@ -4,21 +4,9 @@ services:
     extends:
       file: compose-common.yml
       service: nginx
-    ports:
-      - "8080:80"
-    logging:
-      driver: "syslog"
-      options:
-        syslog-facility: "local0"
-        syslog-tag: "application/nginx"
     depends_on:
     - php
   php:
     extends:
       file: compose-common.yml
       service: php
-    logging:
-      driver: "syslog"
-      options:
-        syslog-facility: "local0"
-        syslog-tag: "application/php"
