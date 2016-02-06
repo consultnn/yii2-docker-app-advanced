@@ -7,6 +7,10 @@
         {
             "name": "sokrat",
             "email": "sergey.sipatov@gmail.com"
+        },
+        {
+            "name": "Maxim Mironyuk",
+            "email": "serieznyi@gmail.com"
         }
     ],
     "minimum-stability": "dev",
