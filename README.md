@@ -5,7 +5,8 @@ Yii 2 docker is a configuration for easy deployment and development of Yii 2 Adv
 REQUIREMENTS
 ------------
 
-Docker and Docker compose
+* [Docker](https://github.com/docker/docker/releases) >= v1.10.0
+* [Docker Compose](https://github.com/docker/compose/releases) >= v1.6.0
 
 INSTALLATION VIA COMPOSER
 -------------------------
