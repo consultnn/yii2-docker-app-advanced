@@ -4,8 +4,6 @@ services:
     extends:
       file: compose-common.yml
       service: nginx
-    ports:
-      - "8080:80"
     logging:
       driver: "syslog"
       options:

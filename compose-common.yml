@@ -1,0 +1,15 @@
+version: '2'
+services:
+  nginx:
+    image: nginx:1.9
+    volumes:
+    - ./project:/www
+    - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    ports:
+    - "8090:80"
+  php:
+    build: docker/php/build
+    volumes:
+    - ./project:/www:rw
+    - ./docker/php/php-fpm.conf:/usr/local/etc/php-fpm.conf
+    working_dir: /www/
