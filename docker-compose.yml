@@ -2,11 +2,15 @@ version: '2'
 services:
   nginx:
     extends:
-      file: compose-common.yml
+      file: common-compose.yml
       service: nginx
     depends_on:
     - php
   php:
     extends:
-      file: compose-common.yml
+      file: common-compose.yml
       service: php
+  mongo:
+    extends:
+      file: common-compose.yml
+      service: mongo

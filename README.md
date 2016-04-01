@@ -13,12 +13,22 @@ INSTALLATION VIA COMPOSER
 ```
 composer create-project --prefer-dist --no-install consultnn/yii2-docker-app-advanced app
 ```
+FAST INSTALLATION
+--------------------
+```
+cp -R /home/serieznyi/projects/github/consultnn/yii2-docker-app-advanced app \
+&& cd app \
+&& rm -rf .git \
+&& git clone --depth=1 git@github.com:yiisoft/yii2-app-advanced.git project \
+&& rm -rf .git \
+&& sudo chown -R $USER:$USER project
+```
 
 MANUAL INSTALLATION
 ---------------------
 Clone this repository
 ```
-git clone https://github.com/consultnn/yii2-docker-app-advanced.git app
+git clone --depth=1 https://github.com/consultnn/yii2-docker-app-advanced.git app
 ```
 Change directory
 ```
@@ -30,12 +40,18 @@ rm -rf .git
 ```
 Install Yii 2 Advanced Project Template via composer inside docker container
 ```
-docker-compose run --rm php composer create-project --prefer-dist yiisoft/yii2-app-advanced project
+git clone --depth=1 git@github.com:yiisoft/yii2-app-advanced.git project
+```
+Remove git directory
+```
+rm -rf .git
 ```
 Change project directory owner (default root, because process inside container run as root)
 ```
 sudo chown -R $USER:$USER project
 ```
+
+Add own [github token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) in ./docker/php/auth.json
 
 DIRECTORY STRUCTURE
 -------------------
@@ -43,8 +59,11 @@ DIRECTORY STRUCTURE
 docker                          contains docker configurations, build files and logs
     nginx                       nginx docker configuration
     php                         php docker configuration
+    mongo                       mongodb docker configuration
 project                         Yii 2 Advanced Project Template
 docker-compose.yml              docker-compose configuration
+production-compose.yml          docker-compose configuration for production env
+common-compose.yml              common docker-compose configuration
 ```
 
 

@@ -1,0 +1,13 @@
+satisfy any;
+allow 81.18.136.114;
+allow 81.18.136.115;
+allow 192.168.10.40;
+allow 88.81.48.206;
+allow 46.251.65.134;
+allow 81.18.135.85;
+allow 88.81.34.31;
+allow 192.168.113.0/24;
+deny all;
+
+auth_basic           "closed site";
+auth_basic_user_file auth/auth;

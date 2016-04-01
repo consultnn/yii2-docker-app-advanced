@@ -1,0 +1,9 @@
+location ~* ^.+\.(jpg|jpeg|gif|ico|gz|zip|flv|rar|wmv|avi|css|png|htc|ico|mpeg|txt|mp3|mov|swf|js|eot|woff|svg|doc|xml)$
+{
+    add_header Access-Control-Allow-Origin *;
+    add_header Cache-Control public;
+    access_log off;
+    expires 1y;
+    try_files $uri =404;
+}
+

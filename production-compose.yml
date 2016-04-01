@@ -1,0 +1,34 @@
+version: '2'
+services:
+  nginx:
+    extends:
+      file: common-compose.yml
+      service: nginx
+    logging:
+      driver: "syslog"
+      options:
+        syslog-facility: "local0"
+        syslog-tag: "yii2-docker-app-advanced/nginx"
+    depends_on:
+    - php
+    restart: always
+  php:
+    extends:
+      file: common-compose.yml
+      service: php
+    logging:
+      driver: "syslog"
+      options:
+        syslog-facility: "local0"
+        syslog-tag: "yii2-docker-app-advanced/php"
+    restart: always
+  mongo:
+    extends:
+      file: common-compose.yml
+      service: mongo
+    logging:
+      driver: "syslog"
+      options:
+        syslog-facility: "local0"
+        syslog-tag: "yii2-docker-app-advanced/mongo"
+    restart: always
