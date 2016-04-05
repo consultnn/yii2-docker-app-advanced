@@ -16,7 +16,7 @@ composer create-project --prefer-dist --no-install consultnn/yii2-docker-app-adv
 FAST INSTALLATION
 --------------------
 ```
-cp -R /home/serieznyi/projects/github/consultnn/yii2-docker-app-advanced app \
+git clone --depth=1 https://github.com/consultnn/yii2-docker-app-advanced.git app \
 && cd app \
 && rm -rf .git \
 && git clone --depth=1 git@github.com:yiisoft/yii2-app-advanced.git project \
