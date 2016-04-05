@@ -20,6 +20,7 @@ git clone --depth=1 https://github.com/consultnn/yii2-docker-app-advanced.git ap
 && cd app \
 && rm -rf .git \
 && git clone --depth=1 git@github.com:yiisoft/yii2-app-advanced.git project \
+&& cd project \
 && rm -rf .git \
 && sudo chown -R $USER:$USER project
 ```
